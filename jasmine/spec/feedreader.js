@@ -26,11 +26,19 @@ $(function() {
             expect(allFeeds.length).not.toBe(0);
         });
 
-
+    describe('RSS Feeds URLS', function() {
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
+         it('are defined and have a URL', function() {
+            var index = 0;
+            expect(allFeeds[index]).toBeDefined();
+            expect(allFeeds[index]).not.toBe('');
+
+         })
+    });
+
 
 
         /* TODO: Write a test that loops through each feed
