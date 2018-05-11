@@ -51,7 +51,7 @@ $(function() {
 
     /* TODO: Write a new test suite named "The menu" */
 
-    describe('The menu', function() {
+    describe('The Menu', function() {
         var menuIcon = $('.menu-icon-link');
         var hidden = $('.hidden');
         /* TODO: Write a test that ensures the menu element is
