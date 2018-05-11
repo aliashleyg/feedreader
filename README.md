@@ -1,6 +1,6 @@
 # Feedreader Project
 
-This jasmine.js feedreader file tests the following elements to ensure code is working as intended and expected. 
+This jasmine.js feedreader file tests the following elements to ensure code is working as intended. 
 
 
 ## Test Suite #1, RSS Feeds:
