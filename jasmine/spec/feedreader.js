@@ -52,15 +52,14 @@ $(function() {
     /* TODO: Write a new test suite named "The menu" */
 
     describe('The Menu', function() {
-        var menuIcon = $('.menu-icon-link');
-        var hidden = $('.hidden');
         /* TODO: Write a test that ensures the menu element is
          * hidden by default. You'll have to analyze the HTML and
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
         it('is hidden by default', function() {
-            expect(menuIcon).not.toBe(hidden);
+            expect($('body').hasClass('menu-hidden')).toBe(true);
+
         });
 
         /* TODO: Write a test that ensures the menu changes
@@ -68,20 +67,22 @@ $(function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
-         it('changes visibility when menu icon is clicked', function() {
-            allFeeds.forEach(function(feed) {
-                expect(feed.url).toBeDefined();
-                expect(feed.url.length).not.toBe(0);
-            });
+        it('is visible when icon is clicked', function() {
+            $('.menu-icon-link').trigger('click');
+            expect($('body').hasClass('menu-hidden')).toBe(false);
+        });
+
+        it('is hidden when icon is clicked again', function() {
+             $('.menu-icon-link').trigger('click');
+            expect($('body').hasClass('menu-hidden')).toBe(true);
         });
     });
 
 
 
-    /* TODO: Write a new test suite named "Initial Entries" */
-    var feed = $('.feed');
-    describe('Initial Entries', function() {
 
+    /* TODO: Write a new test suite named "Initial Entries" */
+    describe('Initial Entries', function() {
 
         /* TODO: Write a test that ensures when the loadFeed
          * function is called and completes its work, there is at least
@@ -92,10 +93,11 @@ $(function() {
          beforeEach(function(done) {
             loadFeed(0);
             done();
-         })
+         });
 
         it('has finished running and has at least one entry', function(done) {
-            expect(feed.length).not.toBe(0);
+            var feedEntry = $('.feed .entry').length;
+            expect(feedEntry).toBeGreaterThan(0);
             done();
         });
     });
@@ -109,6 +111,7 @@ $(function() {
          */
 
         var beforeLoad;
+        var afterLoad;
         beforeEach(function(done) {
         beforeLoad = loadFeed(0);
         done();
