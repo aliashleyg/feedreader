@@ -7,7 +7,7 @@ This jasmine.js feedreader file tests the following elements to ensure code is w
 2. Open the index.html file in your favorite browser.
 3. To navigate the site, use the menu icon to toggle open/close the menu.
 
-## Jasmine Tests Being Performed.
+## Jasmine Tests Being Performed
 
 ### Test Suite #1, RSS Feeds:
 1. confirms that the allFeeds variable has been defined and,
