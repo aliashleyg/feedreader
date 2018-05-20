@@ -48,14 +48,13 @@ $(function() {
          * has two expectations: does the menu display when
          * clicked and does it hide when clicked again.
          */
-        it('is visible when icon is clicked', function() {
+         it('changes visibility on click', function() {
             $('.menu-icon-link').trigger('click');
             expect($('body').hasClass('menu-hidden')).toBe(false);
-        });
-        it('is hidden when icon is clicked again', function() {
             $('.menu-icon-link').trigger('click');
             expect($('body').hasClass('menu-hidden')).toBe(true);
-        });
+         });
+
     });
 
     describe('Initial Entries', function() {
@@ -72,7 +71,7 @@ $(function() {
         });
 
         it('has finished running and has at least one entry', function(done) {
-            var feedEntry = $('.entry').length;
+            var feedEntry = $('.feed .entry').length;
             expect(feedEntry).toBeGreaterThan(0);
             done();
         });
@@ -103,3 +102,20 @@ $(function() {
         });
     });
 })();
+
+// if(!$('body').hasClass('menu-hidden')) {
+//                 $('.menu-icon-link').trigger('click');
+//             }
+
+//             $('.menu-icon-link').trigger('click');
+//             expect($('body').hasClass('menu-hidden')).toBe(true);
+
+ // it('is visible when icon is clicked', function() {
+        //     $('.menu-icon-link').trigger('click');
+        //     expect($('body').hasClass('menu-hidden')).toBe(false);
+        // });
+
+        // it('is hidden when icon is clicked again', function() {
+        //     $('.menu-icon-link').trigger('click');
+        //     expect($('body').hasClass('menu-hidden')).toBe(true);
+        // });
